@@ -12,7 +12,7 @@ var bio = {
         "github": "memowii",
         "location": "Xalapa, Veracruz"
     },
-    "welcomeMessage": "Welcome guys",
+    "welcomeMessage": "Welcome guys!",
     "skills": ["JavaScript", "HTML5", "CSS"],
     "bioPic": "images/me.jpeg"
 };
@@ -100,6 +100,12 @@ var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+$("#header").append(formattedBioPic);
+
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedWelcomeMsg);
 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedMobile);
