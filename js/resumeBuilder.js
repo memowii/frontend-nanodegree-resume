@@ -3,14 +3,14 @@
  */
 
 var bio = {
-    "name": "Guillermo García López",
+    "name": "Guillermo García",
     "role": "Web Developer",
     "contacts": {
         "mobile": "2288532411",
         "email": "memowii@hotmail.com",
         "twitter": "memowii",
         "github": "memowii",
-        "location": "Xalapa, Veracruz"
+        "location": "Veracruz"
     },
     "welcomeMessage": "Welcome guys!",
     "skills": ["JavaScript", "HTML5", "CSS"],
@@ -21,7 +21,7 @@ var education = {
     "schools": [
         {
             "name": "Universidad Veracruzana",
-            "city": "Xalapa, Veracruzana",
+            "location": "Xalapa",  //"location": "Xalapa, Veracruzana",
             "degree": "BS",
             "majors": ["CS"],
             "dates": 2017,
@@ -29,7 +29,7 @@ var education = {
         },
         {
             "name": "CBTIS No. 13",
-            "city": "Xalapa, Veracruzana",
+            "location": "Xalapa",
             "degree": "Preparatory School",
             "majors": ["Accounting"],
             "dates": 2011,
@@ -64,13 +64,15 @@ var work = {
             "employer": "Universidad Veracruzana",
             "title": "Programmer",
             "dates": "2013 - 2017",
-            "description": "Web Applications Development."
+            "description": "Web Applications Development.",
+            "location": "Veracruz"
         },
         {
             "employer": "Mabaxsa",
             "title": "Warehouse Assistant",
             "dates": "2013",
-            "description": "Helped to arrange products and merchandise."
+            "description": "Helped to arrange products and merchandise.",
+            "location": "Veracruz"
         }
     ]
 };
@@ -148,3 +150,43 @@ function displayWork() {
 }
 
 displayWork();
+
+projects.display = function () {
+  for (project in projects.projects) {
+      $("#projects").append(HTMLprojectStart);
+
+      var formmattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+      $(".project-entry:last").append(formmattedTitle);
+
+      var formattedDate = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+      $(".project-entry:last").append(formattedDate);
+
+      var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+      $(".project-entry:last").append(formattedDescription);
+
+      if (projects.projects[project].images.length > 0) {
+          for (var image in projects.projects[project].images) {
+              var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+              $(".project-entry:last").append(formattedImage);
+          }
+      }
+  }
+};
+
+projects.display();
+
+$(document).click(function (loc) {
+    var x = loc.pageX;
+    var y = loc.pageY;
+
+    logClicks(x, y);
+});
+
+$("#main").append(internationalizeButton);
+
+function inName(name) {
+    var splitName = name.split(' ');
+    return splitName[0][0].toUpperCase() + splitName[0].slice(1).toLowerCase() + ' ' + splitName[1].toUpperCase();
+}
+
+$("#mapDiv").append(googleMap);
