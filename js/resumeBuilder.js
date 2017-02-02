@@ -10,11 +10,11 @@ var bio = {
         "email": "memowii@hotmail.com",
         "twitter": "memowii",
         "github": "memowii",
-        "location": "Veracruz"
+        "location": "Xalapa"
     },
     "welcomeMessage": "Welcome guys!",
     "skills": ["JavaScript", "HTML5", "CSS"],
-    "bioPic": "images/me.jpeg"
+    "bioPic": "images/me.jpg"
 };
 
 var education = {
@@ -64,7 +64,7 @@ var work = {
             "employer": "Universidad Veracruzana",
             "title": "Programmer",
             "dates": "2013 - 2017",
-            "description": "Web Applications Development.",
+            "description": "Developed several school projects.",
             "location": "Veracruz"
         },
         {
@@ -84,7 +84,7 @@ var projects = {
             "dates": 2015,
             "description": "A modified version of the 2048 game.",
             "images": [
-                "images/2048.png"
+                "images/r2048.png"
             ]
         },
         {
@@ -92,7 +92,7 @@ var projects = {
             "dates": 2017,
             "description": "Pong tutorial made by Mozilla.",
             "images": [
-                "images/pong.png"
+                "images/rpong.png"
             ]
         }
     ]
