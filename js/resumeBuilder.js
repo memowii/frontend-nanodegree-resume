@@ -93,6 +93,12 @@ var education = {
             "school": "Udacity",
             "dates": 2016,
             "url": "https://www.udacity.com/course/java-programming-basics--ud282"
+        },
+        {
+            "title": "Intro to jQuery",
+            "school": "Udacity",
+            "dates": 2017,
+            "url": "https://www.udacity.com/course/intro-to-jquery--ud245"
         }
     ],
     display: function () {
